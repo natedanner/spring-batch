@@ -29,7 +29,7 @@ public class Person {
 
 	private String last_name = "";
 
-	private int age = 0;
+	private int age;
 
 	private Address address = new Address();
 
@@ -136,12 +136,12 @@ public class Person {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + (address == null ? 0 : address.hashCode());
 		result = prime * result + age;
-		result = prime * result + ((children == null) ? 0 : children.hashCode());
-		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		result = prime * result + (children == null ? 0 : children.hashCode());
+		result = prime * result + (firstName == null ? 0 : firstName.hashCode());
+		result = prime * result + (last_name == null ? 0 : last_name.hashCode());
+		result = prime * result + (title == null ? 0 : title.hashCode());
 		return result;
 	}
 

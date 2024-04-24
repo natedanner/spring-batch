@@ -51,7 +51,7 @@ class RepeatTransactionalPollingIntegrationTests implements ApplicationContextAw
 
 	private Lifecycle bus;
 
-	private volatile static int count = 0;
+	private static volatile int count;
 
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

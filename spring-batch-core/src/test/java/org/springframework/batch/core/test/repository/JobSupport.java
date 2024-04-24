@@ -42,7 +42,7 @@ public class JobSupport implements BeanNameAware, Job {
 
 	private String name;
 
-	private boolean restartable = false;
+	private boolean restartable;
 
 	private JobParametersValidator jobParametersValidator = new DefaultJobParametersValidator();
 

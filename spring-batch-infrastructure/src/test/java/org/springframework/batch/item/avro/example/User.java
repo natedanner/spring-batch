@@ -235,8 +235,8 @@ public class User extends org.apache.avro.specific.SpecificRecordBase
 	/**
 	 * RecordBuilder for User instances.
 	 */
-	public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<User>
-			implements org.apache.avro.data.RecordBuilder<User> {
+	public static final class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<User>
+		implements org.apache.avro.data.RecordBuilder<User> {
 
 		private CharSequence name;
 

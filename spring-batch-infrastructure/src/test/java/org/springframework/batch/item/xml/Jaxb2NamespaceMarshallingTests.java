@@ -62,9 +62,9 @@ class Jaxb2NamespaceMarshallingTests {
 	private final Resource expected = new ClassPathResource("expected-qualified-output.xml", getClass());
 
 	private final Chunk<QualifiedTrade> objects = Chunk.of(
-			new QualifiedTrade("isin1", 1, new BigDecimal(1.0), "customer1"),
-			new QualifiedTrade("isin2", 2, new BigDecimal(2.0), "customer2"),
-			new QualifiedTrade("isin3", 3, new BigDecimal(3.0), "customer3"));
+			new QualifiedTrade("isin1", 1, BigDecimal.valueOf(1.0), "customer1"),
+			new QualifiedTrade("isin2", 2, BigDecimal.valueOf(2.0), "customer2"),
+			new QualifiedTrade("isin3", 3, BigDecimal.valueOf(3.0), "customer3"));
 
 	/**
 	 * Write list of domain objects and check the output file.

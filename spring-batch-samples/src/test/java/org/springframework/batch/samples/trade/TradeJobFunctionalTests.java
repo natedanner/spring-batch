@@ -49,7 +49,7 @@ class TradeJobFunctionalTests {
 
 	private List<Trade> trades;
 
-	private int activeRow = 0;
+	private int activeRow;
 
 	private JdbcTemplate jdbcTemplate;
 
@@ -142,32 +142,38 @@ class TradeJobFunctionalTests {
 
 		@Override
 		public int hashCode() {
-			final int PRIME = 31;
+			final int prime = 31;
 			int result = 1;
 			long temp;
 			temp = Double.doubleToLongBits(credit);
-			result = PRIME * result + (int) (temp ^ (temp >>> 32));
-			result = PRIME * result + ((name == null) ? 0 : name.hashCode());
+			result = prime * result + (int) (temp ^ (temp >>> 32));
+			result = prime * result + (name == null ? 0 : name.hashCode());
 			return result;
 		}
 
 		@Override
 		public boolean equals(Object obj) {
-			if (this == obj)
+			if (this == obj) {
 				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final Customer other = (Customer) obj;
-			if (Double.doubleToLongBits(credit) != Double.doubleToLongBits(other.credit))
-				return false;
-			if (name == null) {
-				if (other.name != null)
-					return false;
 			}
-			else if (!name.equals(other.name))
+			if (obj == null) {
 				return false;
+			}
+			if (getClass() != obj.getClass()) {
+				return false;
+			}
+			final Customer other = (Customer) obj;
+			if (Double.doubleToLongBits(credit) != Double.doubleToLongBits(other.credit)) {
+				return false;
+			}
+			if (name == null) {
+				if (other.name != null) {
+					return false;
+				}
+			}
+			else if (!name.equals(other.name)) {
+				return false;
+			}
 			return true;
 		}
 

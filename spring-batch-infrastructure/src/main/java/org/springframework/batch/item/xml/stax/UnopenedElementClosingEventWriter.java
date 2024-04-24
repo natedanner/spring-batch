@@ -54,7 +54,7 @@ public class UnopenedElementClosingEventWriter extends AbstractEventWriterWrappe
 	public void add(XMLEvent event) throws XMLStreamException {
 		if (isUnopenedElementCloseEvent(event)) {
 			QName element = unopenedElements.removeLast();
-			String nsPrefix = !StringUtils.hasText(element.getPrefix()) ? "" : element.getPrefix() + ":";
+			String nsPrefix = StringUtils.hasText(element.getPrefix()) ? element.getPrefix() + ":" : "";
 			try {
 				super.flush();
 				ioWriter.write("</" + nsPrefix + element.getLocalPart() + ">");

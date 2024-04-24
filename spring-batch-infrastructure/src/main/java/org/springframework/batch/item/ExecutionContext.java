@@ -40,7 +40,7 @@ import org.springframework.lang.Nullable;
  */
 public class ExecutionContext implements Serializable {
 
-	private volatile boolean dirty = false;
+	private volatile boolean dirty;
 
 	private final Map<String, Object> map;
 

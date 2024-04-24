@@ -113,8 +113,8 @@ public abstract class JdbcParameterUtils {
 	 */
 	private static boolean parameterNameContinues(String statement, int pos) {
 		char character = statement.charAt(pos);
-		return (character != ' ' && character != ',' && character != ')' && character != '"' && character != '\''
-				&& character != '|' && character != ';' && character != '\n' && character != '\r');
+		return character != ' ' && character != ',' && character != ')' && character != '"' && character != '\''
+				&& character != '|' && character != ';' && character != '\n' && character != '\r';
 	}
 
 }

@@ -164,7 +164,7 @@ public abstract class AbstractMethodInvokingDelegator<T> implements Initializing
 						if (arguments[j] == null) {
 							continue;
 						}
-						if (!(ClassUtils.isAssignableValue(params[j], arguments[j]))) {
+						if (!ClassUtils.isAssignableValue(params[j], arguments[j])) {
 							argumentsMatchParameters = false;
 						}
 					}

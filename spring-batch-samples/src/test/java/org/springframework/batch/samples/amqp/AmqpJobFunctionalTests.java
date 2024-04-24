@@ -107,9 +107,9 @@ class AmqpJobFunctionalTests {
 	@Configuration
 	static class AmqpConfiguration {
 
-		public final static String QUEUE_NAME = "rabbitmq.test.queue";
+		public static final String QUEUE_NAME = "rabbitmq.test.queue";
 
-		public final static String EXCHANGE_NAME = "rabbitmq.test.exchange";
+		public static final String EXCHANGE_NAME = "rabbitmq.test.exchange";
 
 		/**
 		 * @return {@link CachingConnectionFactory} to be used by the {@link AmqpTemplate}

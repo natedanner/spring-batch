@@ -55,11 +55,11 @@ public class JobRegistrySmartInitializingSingleton
 	private static final Log logger = LogFactory.getLog(JobRegistrySmartInitializingSingleton.class);
 
 	// It doesn't make sense for this to have a default value...
-	private JobRegistry jobRegistry = null;
+	private JobRegistry jobRegistry;
 
 	private final Collection<String> jobNames = new HashSet<>();
 
-	private String groupName = null;
+	private String groupName;
 
 	private ListableBeanFactory beanFactory;
 

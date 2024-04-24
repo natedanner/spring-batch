@@ -65,10 +65,12 @@ public class IteratorItemReader<T> implements ItemReader<T> {
 	@Nullable
 	@Override
 	public T read() {
-		if (iterator.hasNext())
-			return iterator.next();
-		else
-			return null; // end of data
+		if (iterator.hasNext()) {
+			return iterator.next(); // end of data
+		}
+		else {
+			return null;
+		}
 	}
 
 }

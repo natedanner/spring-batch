@@ -83,7 +83,7 @@ class RemoteLauncherTests {
 
 	@Test
 	void testPauseJob() throws Exception {
-		final int SLEEP_INTERVAL = 600;
+		final int sleepInterval = 600;
 
 		assertTrue(isConnected());
 		assertTrue(launcher.getJobNames().contains("loopJob"));
@@ -92,25 +92,25 @@ class RemoteLauncherTests {
 
 		// sleep long enough to avoid race conditions (serializable tx isolation
 		// doesn't work with HSQL)
-		Thread.sleep(SLEEP_INTERVAL);
+		Thread.sleep(sleepInterval);
 
 		launcher.stop(executionId);
 
-		Thread.sleep(SLEEP_INTERVAL);
+		Thread.sleep(sleepInterval);
 
 		logger.debug(launcher.getSummary(executionId));
 		long resumedId = launcher.restart(executionId);
 		assertNotSame(executionId, resumedId, "Picked up the same execution after pause and resume");
 
-		Thread.sleep(SLEEP_INTERVAL);
+		Thread.sleep(sleepInterval);
 		launcher.stop(resumedId);
-		Thread.sleep(SLEEP_INTERVAL);
+		Thread.sleep(sleepInterval);
 
 		logger.debug(launcher.getSummary(resumedId));
 		long resumeId2 = launcher.restart(resumedId);
 		assertNotSame(executionId, resumeId2, "Picked up the same execution after pause and resume");
 
-		Thread.sleep(SLEEP_INTERVAL);
+		Thread.sleep(sleepInterval);
 		launcher.stop(resumeId2);
 	}
 

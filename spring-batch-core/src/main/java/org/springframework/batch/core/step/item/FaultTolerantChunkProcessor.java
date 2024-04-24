@@ -220,7 +220,7 @@ public class FaultTolerantChunkProcessor<I, O> extends SimpleChunkProcessor<I, O
 				String status = BatchMetrics.STATUS_SUCCESS;
 				O output = null;
 				try {
-					O cached = (cacheIterator != null && cacheIterator.hasNext()) ? cacheIterator.next() : null;
+					O cached = cacheIterator != null && cacheIterator.hasNext() ? cacheIterator.next() : null;
 					if (cached != null && !processorTransactional) {
 						output = cached;
 					}
@@ -615,7 +615,7 @@ public class FaultTolerantChunkProcessor<I, O> extends SimpleChunkProcessor<I, O
 
 		private Chunk<O> outputs;
 
-		private int filterCount = 0;
+		private int filterCount;
 
 		private boolean scanning;
 

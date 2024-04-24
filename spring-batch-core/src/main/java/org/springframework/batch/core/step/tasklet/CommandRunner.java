@@ -46,6 +46,6 @@ public interface CommandRunner {
 	 *
 	 * @see Runtime#exec(String, String[], File)
 	 */
-	Process exec(String command[], String[] envp, File dir) throws IOException;
+	Process exec(String[] command, String[] envp, File dir) throws IOException;
 
 }
